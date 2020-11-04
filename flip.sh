@@ -1,0 +1,1 @@
+echo "Flip Coin Simulator""
