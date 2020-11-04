@@ -14,6 +14,26 @@ done
 if [ $head -eq $tail ]
 then
 	echo "Tie"
+	while [ true ]
+	do
+		ran=$(($RANDOM%2+1));
+		if [ $ran -eq 1 ]
+		then
+			((head++))
+		else
+			((tail++))
+		fi
+		d=$(($head-$tail))
+		d1=$(($tail-$head))
+		if [ $d -ge 2 ] || [ $d1 -ge 2 ]
+		then
+			echo "Head;$head Tail:$tail"
+		break
+		else
+			continue
+		fi
+	done
+
 elif [ $head -gt $tail ]
 then
 	echo "Head won"
